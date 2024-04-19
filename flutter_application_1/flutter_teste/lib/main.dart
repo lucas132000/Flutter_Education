@@ -23,16 +23,16 @@ class AppBarDemo extends StatelessWidget {
           ),
         ),
         title: Text(
-          'AppBar Title',
+          'AppBar Title', // Altere para a string desejada ou localize a partir de seus próprios recursos
         ),
         actions: [
           IconButton(
-            tooltip: 'Favorite',
+            tooltip: 'Favorite', // Altere para a string desejada ou localize a partir de seus próprios recursos
             icon: const Icon(Icons.favorite),
             onPressed: () {},
           ),
           IconButton(
-            tooltip: 'Search',
+            tooltip: 'Search', // Altere para a string desejada ou localize a partir de seus próprios recursos
             icon: const Icon(Icons.search),
             onPressed: () {},
           ),
@@ -40,13 +40,13 @@ class AppBarDemo extends StatelessWidget {
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
-                  child: Text('First'),
+                  child: Text('First'), // Altere para a string desejada ou localize a partir de seus próprios recursos
                 ),
                 PopupMenuItem(
-                  child: Text('Second'),
+                  child: Text('Second'), // Altere para a string desejada ou localize a partir de seus próprios recursos
                 ),
                 PopupMenuItem(
-                  child: Text('Third'),
+                  child: Text('Third'), // Altere para a string desejada ou localize a partir de seus próprios recursos
                 ),
               ];
             },
@@ -55,24 +55,34 @@ class AppBarDemo extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Home Tab',
+          'Home Tab', // Altere para a string desejada ou localize a partir de seus próprios recursos
         ),
       ),
       // Adiciona o Drawer ao Scaffold
       drawer: Drawer(
         child: ListView(
-          // Defina os itens no Drawer
+          // Define os itens no Drawer
           children: [
+            // Adiciona um DrawerHeader com uma foto de perfil arredondada
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 50, // Define o raio da imagem para torná-la arredondada
+                    backgroundImage: AssetImage('assets/profile.jpg'),
+                  ),
+                  SizedBox(height: 10), // Espaçamento abaixo da imagem
+                  Text(
+                    'Profile Name',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(
