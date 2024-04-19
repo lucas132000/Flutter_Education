@@ -72,9 +72,9 @@ class AppBarDemo extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 50, // Define o raio da imagem para torná-la arredondada
-                    backgroundImage: AssetImage('assets/profile.jpg'),
+                    backgroundImage: AssetImage('assets/images/profile.jpg'),
                   ),
-                  SizedBox(height: 10), // Espaçamento abaixo da imagem
+                  //SizedBox(height: 10), // Espaçamento abaixo da imagem
                   Text(
                     'Profile Name',
                     style: TextStyle(
