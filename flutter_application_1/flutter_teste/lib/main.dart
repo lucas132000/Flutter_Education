@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -7,8 +8,9 @@ class AppBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Obtenha uma instância de MaterialLocalizations para acessar os textos localizados
-    final MaterialLocalizations localizations = MaterialLocalizations.of(context);
-    
+    final MaterialLocalizations localizations =
+        MaterialLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue, // Cor de fundo do AppBar
@@ -27,12 +29,14 @@ class AppBarDemo extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            tooltip: 'Favorite', // Altere para a string desejada ou localize a partir de seus próprios recursos
+            tooltip:
+                'Favorite', // Altere para a string desejada ou localize a partir de seus próprios recursos
             icon: const Icon(Icons.favorite),
             onPressed: () {},
           ),
           IconButton(
-            tooltip: 'Search', // Altere para a string desejada ou localize a partir de seus próprios recursos
+            tooltip:
+                'Search', // Altere para a string desejada ou localize a partir de seus próprios recursos
             icon: const Icon(Icons.search),
             onPressed: () {},
           ),
@@ -40,13 +44,16 @@ class AppBarDemo extends StatelessWidget {
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
-                  child: Text('First'), // Altere para a string desejada ou localize a partir de seus próprios recursos
+                  child: Text(
+                      'First'), // Altere para a string desejada ou localize a partir de seus próprios recursos
                 ),
                 PopupMenuItem(
-                  child: Text('Second'), // Altere para a string desejada ou localize a partir de seus próprios recursos
+                  child: Text(
+                      'Second'), // Altere para a string desejada ou localize a partir de seus próprios recursos
                 ),
                 PopupMenuItem(
-                  child: Text('Third'), // Altere para a string desejada ou localize a partir de seus próprios recursos
+                  child: Text(
+                      'Third'), // Altere para a string desejada ou localize a partir de seus próprios recursos
                 ),
               ];
             },
@@ -71,12 +78,13 @@ class AppBarDemo extends StatelessWidget {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 50, // Define o raio da imagem para torná-la arredondada
+                    radius:
+                        50, // Define o raio da imagem para torná-la arredondada
                     backgroundImage: AssetImage('assets/images/profile.jpg'),
                   ),
                   //SizedBox(height: 10), // Espaçamento abaixo da imagem
                   Text(
-                    'Profile Name',
+                    'Profile',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -117,7 +125,12 @@ class AppBarDemo extends StatelessWidget {
 }
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
