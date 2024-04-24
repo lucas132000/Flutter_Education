@@ -1,6 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_teste/about_page.dart';
+import 'package:flutter_teste/home_page.dart';
 import 'package:flutter_teste/settings_screen.dart';
 
 class AppBarDemo extends StatelessWidget {
@@ -98,7 +100,11 @@ class AppBarDemo extends StatelessWidget {
               title: Text('Home'),
               onTap: () {
                 // Ação ao selecionar "Home"
-                Navigator.pop(context); // Fechar o Drawer
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                ); // Fechar o Drawer
               },
             ),
             ListTile(
@@ -118,7 +124,11 @@ class AppBarDemo extends StatelessWidget {
               title: Text('About'),
               onTap: () {
                 // Ação ao selecionar "About"
-                Navigator.pop(context); // Fechar o Drawer
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutPage()),
+                );  // Fechar o Drawer
               },
             ),
           ],
