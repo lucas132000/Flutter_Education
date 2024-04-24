@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_teste/settings_screen.dart';
 
 class AppBarDemo extends StatelessWidget {
   const AppBarDemo({Key? key}) : super(key: key);
@@ -82,7 +83,6 @@ class AppBarDemo extends StatelessWidget {
                         50, // Define o raio da imagem para torná-la arredondada
                     backgroundImage: AssetImage('assets/images/profile.jpg'),
                   ),
-                  //SizedBox(height: 10), // Espaçamento abaixo da imagem
                   Text(
                     'Profile',
                     style: TextStyle(
@@ -106,7 +106,11 @@ class AppBarDemo extends StatelessWidget {
               title: Text('Settings'),
               onTap: () {
                 // Ação ao selecionar "Settings"
-                Navigator.pop(context); // Fechar o Drawer
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsScreen()),
+                ); // Fechar o Drawer
               },
             ),
             ListTile(
